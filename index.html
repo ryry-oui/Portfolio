@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rayhan Benlhaj — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Optionnel: une police simple. Tu peux retirer si tu veux rester 100% système -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style/styles.css" />
+</head>
+<body>
+  <!-- Bouton d’ouverture du menu -->
+  <header class="site-header">
+    <button id="menuToggle"
+            class="menu-toggle"
+            aria-label="Open main navigation"
+            aria-controls="siteNav"
+            aria-expanded="false">
+      <span class="bar" aria-hidden="true"></span>
+      <span class="bar" aria-hidden="true"></span>
+      <span class="bar" aria-hidden="true"></span>
+      <span class="sr-only">Menu</span>
+    </button>
+    <h1 class="brand">Rayhan Benlhaj</h1>
+  </header>
+
+  <!-- Menu coulissant (off-canvas) -->
+  <nav id="siteNav" class="offcanvas" aria-hidden="true">
+    <button class="close-nav" id="closeNav" aria-label="Close main navigation">&times;</button>
+    <ul class="nav-list">
+      <li><a href="technical-content.html">Technical Content &amp; Relevance</a></li>
+      <li><a href="reflection-growth.html">Reflection &amp; Professional Growth</a></li>
+      <li><a href="career-networking.html">Career &amp; Networking Tools</a></li>
+      <li><a href="structure-organisation.html">Structure &amp; Organisation</a></li>
+      <li><a href="digital-creativity.html">Digital Creativity &amp; Design</a></li>
+      <li><a href="csr-engagement.html">CSR Engagement</a></li>
+      <li><a href="mobility-intercultural.html">Mobility &amp; Intercultural Preparation</a></li>
+    </ul>
+  </nav>
+
+  <!-- Calque pour assombrir l’arrière-plan quand le menu est ouvert -->
+  <div id="overlay" class="overlay" hidden></div>
+
+  <!-- Section principale (Hero) -->
+  <main>
+    <section class="hero" aria-labelledby="intro-title">
+      <!-- Fond combiné ENSEEIHT + ONERA -->
+      <div class="hero-bg" aria-hidden="true">
+        <div class="bg-left">
+          <img src="images/enseeiht.jpg" alt="" />
+        </div>
+        <div class="bg-right">
+          <img src="images/onera2.png" alt="" />
+        </div>
+      </div>
+
+      <!-- Contenu de présentation -->
+      <div class="hero-content">
+        <figure class="profile">
+          <img src="images/moi.jpeg" alt="Portrait of Rayhan Benlhaj" class="profile-photo" />
+        </figure>
+
+        <div class="intro">
+          <h2 id="intro-title">Hello, I’m Rayhan Benlhaj</h2>
+          <p class="lead">
+            First-year apprentice in Digital Sciences at ENSEEIHT. I work as a database engineer apprentice
+            for the space environment at ONERA.
+          </p>
+          <p class="sub">
+            I’m passionate about data, clean code, and building reliable systems that serve aerospace and research needs.
+          </p>
+          <div class="cta-row">
+            <a class="btn primary" href="technical-content.html">Explore my work</a>
+            <a class="btn ghost" href="#about">About me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Une section “About” minimaliste (optionnelle pour l’instant) -->
+    <section id="about" class="about">
+      <h3>About this portfolio</h3>
+      <p>
+        This site presents selected projects, reflections on my professional growth, and resources related to my career development.
+        Use the menu to navigate between sections.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>© <span id="year"></span> Rayhan Benlhaj. All rights reserved.</small>
+  </footer>
+
+  <script src="script/script.js"></script>
+</body>
+</html>
