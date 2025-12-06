@@ -1,96 +1,1380 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rayhan Benlhaj — Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <!-- Optionnel: une police simple. Tu peux retirer si tu veux rester 100% système -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style/styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rayhan Benlhaj Portfolio</title>
+    <link rel="stylesheet" href="style/styles.css">
 </head>
 <body>
-  <!-- Bouton d’ouverture du menu -->
-  <header class="site-header">
-    <button id="menuToggle"
-            class="menu-toggle"
-            aria-label="Open main navigation"
-            aria-controls="siteNav"
-            aria-expanded="false">
-      <span class="bar" aria-hidden="true"></span>
-      <span class="bar" aria-hidden="true"></span>
-      <span class="bar" aria-hidden="true"></span>
-      <span class="sr-only">Menu</span>
-    </button>
-    <h1 class="brand">Rayhan Benlhaj</h1>
-  </header>
+    <!-- Canvas pour les comètes en arrière-plan -->
+    <canvas id="space-canvas"></canvas>
 
-  <!-- Menu coulissant (off-canvas) -->
-  <nav id="siteNav" class="offcanvas" aria-hidden="true">
-    <button class="close-nav" id="closeNav" aria-label="Close main navigation">&times;</button>
-    <ul class="nav-list">
-      <li><a href="technical-content.html">Technical Content &amp; Relevance</a></li>
-      <li><a href="reflection-growth.html">Reflection &amp; Professional Growth</a></li>
-      <li><a href="career-networking.html">Career &amp; Networking Tools</a></li>
-      <li><a href="structure-organisation.html">Structure &amp; Organisation</a></li>
-      <li><a href="digital-creativity.html">Digital Creativity &amp; Design</a></li>
-      <li><a href="csr-engagement.html">CSR Engagement</a></li>
-      <li><a href="mobility-intercultural.html">Mobility &amp; Intercultural Preparation</a></li>
-    </ul>
-  </nav>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#parcours">My Journey</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#growth">Reflection & Professional Growth</a></li>
+                <li><a href="#carriere">Career</a></li>
+                <li><a href="#engagement">CSR engagement</a></li>
+                <li><a href="#inter">International</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <!-- Calque pour assombrir l’arrière-plan quand le menu est ouvert -->
-  <div id="overlay" class="overlay" hidden></div>
+    <!-- Hero Banner -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="greeting">Hello, I’m</div>
+                <h1 class="hero-title">
+                    <span class="name">Rayhan Benlhaj</span>
+                </h1>
+                <h2 class="hero-subtitle">Database Engineer</h2>
+                <p class="hero-description">
+                    First-year apprentice in Computer Sciences at ENSEEIHT. I work as a database engineer apprentice
+                    for the space industries at ONERA.
+                </p>
 
-  <!-- Section principale (Hero) -->
-  <main>
-    <section class="hero" aria-labelledby="intro-title">
+                <!-- Logos École et Entreprise -->
+                <div class="credentials">
+                    <div class="credential-item">
+                        <a href="https://www.enseeiht.fr/fr/index.html">
+                            <div class="credential-logo">
+                                <img src="images/enseeiht2.png" alt="Logo École">
+                            </div>
+                        </a>
+                        <div class="credential-info">
+                            <span class="credential-label">Student</span>
+                            <span class="credential-name">ENSEEIHT</span>
+                        </div>
+                    </div>
 
-        <div class="hero-visual" aria-hidden="true">
-            <div class="hero-bg">
-                <div class="bg-left"><img src="images/enseeiht.jpg" alt="" /></div>
-                <div class="bg-right"><img src="images/onera2.png" alt="" /></div>
+                    <div class="credential-divider"></div>
+
+                    <div class="credential-item">
+                        <a href="https://www.onera.fr/fr">
+                            <div class="credential-logo">
+                                <img src="images/entreprise3.png" alt="Logo Entreprise">
+                            </div>
+                        </a>
+
+                        <div class="credential-info">
+                            <span class="credential-label">Apprentice</span>
+                            <span class="credential-name">ONERA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#carriere" class="btn btn-primary">My CV</a>
+                    <a href="#projects" class="btn btn-secondary">My projects</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-container">
+                    <div class="orbit orbit-1"></div>
+                    <div class="orbit orbit-2"></div>
+                    <div class="orbit orbit-3"></div>
+                    <img src="images/moi.JPG" alt="Photo de profil" class="profile-image">
+                </div>
             </div>
         </div>
 
-      <!-- Contenu de présentation -->
-      <div class="hero-content">
-        <figure class="profile">
-          <img src="images/moi.jpeg" alt="Portrait of Rayhan Benlhaj" class="profile-photo" />
-        </figure>
-
-        <div class="intro">
-          <h2 id="intro-title">Hello, I’m Rayhan Benlhaj</h2>
-          <p class="lead">
-            First-year apprentice in Digital Sciences at ENSEEIHT. I work as a database engineer apprentice
-            for the space environment at ONERA.
-          </p>
-          <p class="sub">
-            I’m passionate about data, clean code, and building reliable systems that serve aerospace and research needs.
-          </p>
-          <div class="cta-row">
-            <a class="btn primary" href="technical-content.html">Explore my work</a>
-            <a class="btn ghost" href="#about">About me</a>
-          </div>
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+            <span>Scroll</span>
         </div>
-      </div>
     </section>
 
-    <!-- Une section “About” minimaliste (optionnelle pour l’instant) -->
-    <section id="about" class="about">
-      <h3>About this portfolio</h3>
-      <p>
-        This site presents selected projects, reflections on my professional growth, and resources related to my career development.
-        Use the menu to navigate between sections.
-      </p>
+    <!-- Section Qui suis-je -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <div class="title-underline"></div>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="intro-text">
+                        Passionate about IT and the space environment, 
+                        I am an engineering student at ENSEEIHT and a work-study student at ONERA.
+                    </p>
+
+                    <p>
+                        My journey combines scientific rigor with technical creativity. 
+                        I am particularly interested in the fields of aerospace, 
+                        artificial intelligence, and software development.
+                    </p>
+
+                    <p>
+                        For me, every project is an opportunity to learn and push 
+                        the boundaries of what's possible.
+                    </p>
+
+                    <p>
+                        Additionally, I strive to improve day by day by cultivating my creative mind.
+                    </p>
+
+                    <!-- Bouton de bascule -->
+                    <div class="toggle-activities">
+                        <button id="toggleActivitiesBtn" class="toggle-btn">
+                            <svg class="icon-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                <path d="M2 17l10 5 10-5"></path>
+                                <path d="M2 12l10 5 10-5"></path>
+                            </svg>
+                            <span class="btn-text">See my other activities</span>
+                            <svg class="icon-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <p class="toggle-subtitle">Discover what I'm passionate about outside of engineering</p>
+                    </div>
+                </div>
+
+                <!-- Grille de compétences professionnelles -->
+                <div class="skills-grid" id="professionalSkills">
+                    <div class="skill-category" data-category="dev">
+                        <div class="category-header">
+                            <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                            <h3>Development</h3>
+                        </div>
+                        <div class="skill-list">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">Ada</span>
+                            <span class="skill-tag">JS</span>
+                            <span class="skill-tag">Web</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category" data-category="science">
+                        <div class="category-header">
+                            <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2v20M2 12h20"></path>
+                                <circle cx="12" cy="12" r="7"></circle>
+                            </svg>
+                            <h3>Science & Engineering</h3>
+                        </div>
+                        <div class="skill-list">
+                            <span class="skill-tag">Aerospace</span>
+                            <span class="skill-tag">Mathematics</span>
+                            <span class="skill-tag">Physics</span>
+                            <span class="skill-tag">Simulation</span>
+                            <span class="skill-tag">AI</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category" data-category="tools">
+                        <div class="category-header">
+                            <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                            </svg>
+                            <h3>Tools & Methodologies</h3>
+                        </div>
+                        <div class="skill-list">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Linux</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Grille d'activités personnelles (cachée par défaut) -->
+                <div class="skills-grid hidden" id="personalActivities">
+                    <div class="skill-category" data-category="sport">
+                        <div class="category-header">
+                            <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 2a10 10 0 0 0 0 20"></path>
+                                <path d="M12 2a10 10 0 0 1 0 20"></path>
+                                <path d="M2 12h20"></path>
+                            </svg>
+                            <h3>Sport</h3>
+                        </div>
+                        <div class="skill-list">
+                            <span class="skill-tag activity-tag">🏓 Table Tennis</span>
+                            <span class="skill-tag activity-tag">🏃 Running</span>
+                        </div>
+                        <p class="category-description">
+                            Regular practice of competitive table tennis. Sport teaches me perseverance and strategy.
+                        </p>
+                    </div>
+
+                    <div class="skill-category" data-category="creative">
+                        <div class="category-header">
+                            <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 18V5l12-2v13"></path>
+                                <circle cx="6" cy="18" r="3"></circle>
+                                <circle cx="18" cy="16" r="3"></circle>
+                            </svg>
+                            <h3>Creativity</h3>
+                        </div>
+                        <div class="skill-list">
+                            <span class="skill-tag activity-tag">🎸 Guitar</span>
+                            <span class="skill-tag activity-tag">🎹 Piano</span>
+                        </div>
+                        <p class="category-description">
+                            Music is my second passion. It develops my creativity and listening skills.
+                        </p>
+                    </div>
+
+                    <div class="skill-category" data-category="passions">
+                        <div class="category-header">
+                            <svg class="category-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 15v4c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-4M17 9l-5 5-5-5M12 12.8V2.5"></path>
+                            </svg>
+                            <h3>Interests</h3>
+                        </div>
+                        <div class="skill-list">
+                            <span class="skill-tag activity-tag">🌤️ Meteorology</span>
+                            <span class="skill-tag activity-tag">🌌 Astronomy</span>
+                            <span class="skill-tag activity-tag">📚 Scientific Reading</span>
+                            <span class="skill-tag activity-tag">🎮 Strategy Games</span>
+                        </div>
+                        <p class="category-description">
+                            Passionate about meteorology and sky observation. I combine science and wonder.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-  </main>
 
-  <footer class="site-footer">
-    <small>© <span id="year"></span> Rayhan Benlhaj. All rights reserved.</small>
-  </footer>
+    
+    <!-- Section Parcours -->
+    <section id="parcours" class="parcours-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">My Journey</h2>
+                <div class="title-underline"></div>
+            </div>
 
-  <script src="script/script.js"></script>
+            <div class="timeline">
+                <!-- Education -->
+                <div class="timeline-item" data-category="formation">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2025 - Present</span>
+                        <h3>Apprentice Engineer in Digital Sciences Department</h3>
+                        <h4>ENSEEIHT - Toulouse</h4>
+                        <p>
+                            Excellent engineering science education with a specialization
+                            in computer science and networks.
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="tag">Education</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work-Study -->
+                <div class="timeline-item" data-category="experience">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2025 - Present</span>
+                        <h3>Work-Study Database Engineer for the Space Environment</h3>
+                        <h4>ONERA - French Aerospace Research Agency</h4>
+                        <p>
+                            Participation in research projects on radiation belts,
+                            development of visualization tools, and analysis of scientific data.
+                        </p>
+                        <ul class="timeline-achievements">
+                            <li>Development of data processing tools</li>
+                            <li>Numerical modeling</li>
+                            <li>Collaboration with research teams</li>
+                        </ul>
+                        <div class="timeline-tags">
+                            <span class="tag">Experience</span>
+                            <span class="tag">Research</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- University Bachelor's Degree -->
+                <div class="timeline-item" data-category="formation">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2022 - 2025</span>
+                        <h3>University Bachelor of Technology in Networks and
+                            Telecommunications, Specializing in Cybersecurity</h3>
+                        <h4>IUT de Blagnac</h4>
+                        <p>
+                            Intensive training in computer science and networks.
+                            Development of analytical skills, rigor, and in-depth work.
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="tag">Education</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Baccalaureate -->
+                <div class="timeline-item" data-category="formation">
+                    <div class="timeline-marker">
+                        <div class="marker-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2022</span>
+                        <h3>Scientific Baccalaureate</h3>
+                        <h4>With Honors</h4>
+                        <p>
+                            Specializations: Mathematics, Physics-Chemistry, Life and Earth Sciences
+                        </p>
+                        <p>
+                            Option: Advanced Mathematics
+                        </p>
+                        <div class="timeline-tags">
+                            <span class="tag">Education</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Section Projets -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">My Projects</h2>
+                <div class="title-underline"></div>
+                <p class="section-subtitle">
+                    Discover some achievements that reflect my passion for technology and innovation
+                </p>
+            </div>
+
+            <!-- Filters -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="ecole">Academic</button>
+                <button class="filter-btn" data-filter="pro">Professional</button>
+
+            </div>
+
+            <!-- Project Grid -->
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-category="ecole" data-project-id="enterprise-network">
+                    <div class="project-image">
+                        <img src="images/tel2.jpg" alt="Network project">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link" onclick="openProjectModal('enterprise-network'); return false;">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Networks</span>
+                            <span class="project-tag">Business</span>
+                        </div>
+                        <h3 class="project-title">Creation and Implementation of an Enterprise Network</h3>
+                        <p class="project-description">
+                            Create a functional enterprise computer network based on client specifications
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-category="pro" data-project-id="python-library">
+                    <div class="project-image">
+                        <img src="images/phys.jpg" alt="Python CDF Library">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link" onclick="openProjectModal('python-library'); return false;">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">NASA CDF</span>
+                            <span class="project-tag">Data Science</span>
+                        </div>
+                        <h3 class="project-title">Python Library for CDF File Manipulation</h3>
+                        <p class="project-description">
+                            Development of a specialized Python library for processing NASA CDF format files used in space physics research (PRBEM datasets)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Projet -->
+    <div id="projectModal" class="project-modal">
+        <div class="project-modal-overlay"></div>
+        <div class="project-modal-content">
+            <button class="project-modal-close" onclick="closeProjectModal()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div id="projectModalBody"></div>
+        </div>
+    </div>
+
+
+    <!-- Section Reflection & Professional Growth -->
+    <section id="growth" class="growth-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Reflection & Professional Growth</h2>
+                <div class="title-underline"></div>
+                <p class="section-subtitle">
+                    Learning from experience: strengths developed and challenges overcome
+                </p>
+            </div>
+
+            <!-- Learning Log Introduction -->
+            <div class="learning-log-intro">
+                <div class="intro-card">
+                    <div class="intro-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>
+                    </div>
+                    <h3>My Learning Log</h3>
+                    <p>
+                        Reflection is a crucial part of professional development. This learning log documents 
+                        key moments in my journey where I developed new strengths or overcame significant challenges.
+                        Each entry includes concrete examples and artifacts that demonstrate my growth.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Learning Entries Grid -->
+            <div class="learning-entries">
+                
+                <!-- Entry 1: Strength Developed -->
+                <div class="learning-entry strength-entry">
+                    <div class="entry-badge">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                        </svg>
+                        <span>Strength Developed</span>
+                    </div>
+                    
+                    <div class="entry-header">
+                        <h3 class="entry-title">Learning to Learn (Apprendre à apprendre)</h3>
+                        <span class="entry-date">2023 - 2025</span>
+                    </div>
+
+                    <div class="entry-content">
+                        <div class="entry-section">
+                            <h4>Context & Development</h4>
+                            <p>
+                                Throughout my academic and professional journey, from IUT to ENSEEIHT and my work 
+                                at ONERA, I've realized that <strong>the ability to learn efficiently</strong> is 
+                                more valuable than any specific technical skill. The rapid evolution of technology 
+                                requires constant adaptation and self-directed learning.
+                            </p>
+                        </div>
+
+                        <div class="entry-section">
+                            <h4>How I Developed This Strength</h4>
+                            <div class="methodology-grid">
+                                <div class="method-card">
+                                    <div class="method-icon">🎯</div>
+                                    <h5>Active Learning</h5>
+                                    <p>Instead of passive reading, I practice hands-on experimentation with new technologies</p>
+                                </div>
+                                <div class="method-card">
+                                    <div class="method-icon">📚</div>
+                                    <h5>Documentation Habit</h5>
+                                    <p>Systematic note-taking and creating personal knowledge bases (notion, markdown files)</p>
+                                </div>
+                                <div class="method-card">
+                                    <div class="method-icon">🔄</div>
+                                    <h5>Teaching Others</h5>
+                                    <p>Reinforcing my understanding by explaining concepts to peers and in my high school interventions</p>
+                                </div>
+                                <div class="method-card">
+                                    <div class="method-icon">🔬</div>
+                                    <h5>Project-Based Learning</h5>
+                                    <p>Applying new concepts immediately in personal or professional projects</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="entry-section">
+                            <h4>Concrete Examples</h4>
+                            <ul class="examples-list">
+                                <li>
+                                    <strong>Python Development at ONERA:</strong> Self-taught advanced Python concepts 
+                                    (regex, CDF file manipulation, object-oriented design) to build the prbem_utils library
+                                </li>
+                                <li>
+                                    <strong>Network Technologies:</strong> Mastered Cisco Packet Tracer and VLAN 
+                                    configuration through iterative practice and experimentation
+                                </li>
+                                <li>
+                                    <strong>Web Development:</strong> Learned modern web technologies (HTML5, CSS3, 
+                                    JavaScript ES6+) to build this interactive portfolio
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="entry-section">
+                            <h4>Impact on My Professional Development</h4>
+                            <div class="impact-stats">
+                                <div class="stat-item">
+                                    <span class="stat-number">5+</span>
+                                    <span class="stat-label">New technologies<br>learned independently</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">100%</span>
+                                    <span class="stat-label">Of projects requiring<br>self-directed learning</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">∞</span>
+                                    <span class="stat-label">Curiosity and<br>growth mindset</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Artifact -->
+                        <div class="entry-artifact">
+                            <div class="artifact-header">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+                                    <polyline points="13 2 13 9 20 9"></polyline>
+                                </svg>
+                                <h5>Artifact: Learning Documentation</h5>
+                            </div>
+                            <div class="artifact-content">
+                                <p>
+                                    Example of my personal documentation process: notes taken while learning 
+                                    Python's regex module for the PRBEM project
+                                </p>
+                                <button class="btn-artifact" onclick="openArtifactModal('learning-notes')">
+                                    View Learning Notes
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Peer Feedback Section -->
+                        <div class="peer-feedback-section">
+                            <div class="feedback-header">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                                <h5>Peer Feedback & Actionable Suggestion</h5>
+                            </div>
+                            <div class="feedback-card">
+                                <p class="feedback-text">
+                                    "Rayhan's ability to quickly grasp new concepts is impressive. One suggestion 
+                                    would be to <strong>create a public knowledge base or blog</strong> to share your 
+                                    learning journey. This would not only reinforce your own understanding but also 
+                                    help the community and build your personal brand as a continuous learner."
+                                </p>
+                                <div class="feedback-author">
+                                    <span>— Peer Review Session, January 2025</span>
+                                </div>
+                            </div>
+                            <div class="action-plan">
+                                <h6>Action Plan:</h6>
+                                <ul>
+                                    <li>✅ Start a technical blog on Medium or Dev.to</li>
+                                    <li>✅ Publish at least 2 articles per month about technologies I'm learning</li>
+                                    <li>✅ Create a public GitHub repository with learning resources and code examples</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entry 2: Challenge Overcome (STAR Method) -->
+                <div class="learning-entry challenge-entry">
+                    <div class="entry-badge challenge-badge">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                        <span>Challenge Overcome</span>
+                    </div>
+                    
+                    <div class="entry-header">
+                        <h3 class="entry-title">Complex Data Processing Under Time Pressure</h3>
+                        <span class="entry-date"></span>
+                    </div>
+
+                    <div class="entry-content">
+                        <!-- STAR Method Structure -->
+                        <div class="star-container">
+                            
+                            <!-- Situation -->
+                            <div class="star-section situation">
+                                <div class="star-letter">S</div>
+                                <div class="star-content">
+                                    <h4>Situation</h4>
+                                    <p>
+                                        During my apprenticeship at ONERA, I was tasked with processing complex CDF 
+                                        (Common Data Format) files containing space weather data. The files had 
+                                        <strong>inconsistent structures</strong>, cryptic variable names, and multiple 
+                                        energy channels spread across different columns. Previous attempts by other 
+                                        team members had been abandoned due to the complexity.
+                                    </p>
+                                    <div class="challenge-details">
+                                        <span class="detail-tag">🗂️ Multiple file formats</span>
+                                        <span class="detail-tag">📊 Complex nested data</span>
+                                        <span class="detail-tag">⏰ 2-week deadline</span>
+                                        <span class="detail-tag">🔄 Legacy code issues</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Task -->
+                            <div class="star-section task">
+                                <div class="star-letter">T</div>
+                                <div class="star-content">
+                                    <h4>Task</h4>
+                                    <p>
+                                        My mission was to create a <strong>robust Python library</strong> that could:
+                                    </p>
+                                    <ul>
+                                        <li>Parse CDF files with various structures automatically</li>
+                                        <li>Extract and organize energy channel data using pattern recognition</li>
+                                        <li>Transform the data into clean, analysis-ready DataFrames</li>
+                                        <li>Generate new CDF files with proper scientific metadata</li>
+                                        <li>Make the solution reusable for the entire team</li>
+                                    </ul>
+                                    <p>
+                                        The library needed to be ready within <strong>2 weeks</strong> to unblock 
+                                        critical space weather analysis projects.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Action -->
+                            <div class="star-section action">
+                                <div class="star-letter">A</div>
+                                <div class="star-content">
+                                    <h4>Action</h4>
+                                    <p>I approached this challenge systematically:</p>
+                                    
+                                    <div class="action-steps">
+                                        <div class="action-step">
+                                            <div class="step-number">1</div>
+                                            <div class="step-content">
+                                                <h5>Research & Understanding</h5>
+                                                <p>
+                                                    Spent the first 2 days analyzing different CDF file structures, 
+                                                    identifying patterns, and understanding the scientific context
+                                                </p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="action-step">
+                                            <div class="step-number">2</div>
+                                            <div class="step-content">
+                                                <h5>Learn Advanced Python Techniques</h5>
+                                                <p>
+                                                    Self-taught regex patterns, advanced pandas operations, and CDF 
+                                                    file manipulation through documentation and experimentation
+                                                </p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="action-step">
+                                            <div class="step-number">3</div>
+                                            <div class="step-content">
+                                                <h5>Iterative Development</h5>
+                                                <p>
+                                                    Built the library incrementally, testing each function with real 
+                                                    data samples and getting feedback from my supervisor
+                                                </p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="action-step">
+                                            <div class="step-number">4</div>
+                                            <div class="step-content">
+                                                <h5>Documentation & Knowledge Transfer</h5>
+                                                <p>
+                                                    Created comprehensive documentation with usage examples and edge 
+                                                    cases to ensure team adoption
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="adaptation-highlight">
+                                        <h5>🔄 Key Adaptations:</h5>
+                                        <ul>
+                                            <li>
+                                                <strong>When:</strong> Initial regex patterns failed for some file types
+                                                <br>
+                                                <strong>Adaptation:</strong> Implemented flexible pattern matching with 
+                                                fallback strategies
+                                            </li>
+                                            <li>
+                                                <strong>When:</strong> Processing time was too slow for large files
+                                                <br>
+                                                <strong>Adaptation:</strong> Optimized algorithms using vectorized pandas 
+                                                operations instead of loops
+                                            </li>
+                                            <li>
+                                                <strong>When:</strong> Edge cases broke the pipeline
+                                                <br>
+                                                <strong>Adaptation:</strong> Added comprehensive error handling and 
+                                                validation checks
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Result -->
+                            <div class="star-section result">
+                                <div class="star-letter">R</div>
+                                <div class="star-content">
+                                    <h4>Result</h4>
+                                    <div class="result-achievements">
+                                        <div class="achievement-card">
+                                            <div class="achievement-icon">✅</div>
+                                            <h5>Successful Delivery</h5>
+                                            <p>Library completed in 10 days (2 days ahead of schedule)</p>
+                                        </div>
+                                        <div class="achievement-card">
+                                            <div class="achievement-icon">🚀</div>
+                                            <h5>Team Adoption</h5>
+                                            <p>Now used by multiple team members as standard workflow</p>
+                                        </div>
+                                        <div class="achievement-card">
+                                            <div class="achievement-icon">🔓</div>
+                                            <h5>Projects Unblocked</h5>
+                                            <p>Revived 3 abandoned space weather analysis projects</p>
+                                        </div>
+                                        <div class="achievement-card">
+                                            <div class="achievement-icon">⚡</div>
+                                            <h5>Efficiency Gain</h5>
+                                            <p>Reduced data processing time from hours to minutes</p>
+                                        </div>
+                                    </div>
+
+                                    <blockquote class="supervisor-quote">
+                                        "Rayhan's prbem_utils library has become an essential tool for our team. 
+                                        His ability to understand complex scientific requirements and translate them 
+                                        into clean, efficient code is remarkable."
+                                        <footer>— Sébastien Bourdarie, ONERA</footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Artifact -->
+                        <div class="entry-artifact">
+                            <div class="artifact-header">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="16 18 22 12 16 6"></polyline>
+                                    <polyline points="8 6 2 12 8 18"></polyline>
+                                </svg>
+                                <h5>Artifact: Code Review & Architecture</h5>
+                            </div>
+                            <div class="artifact-content">
+                                <p>
+                                    Code review document showing the library architecture, key functions, 
+                                    and examples of regex patterns used for data extraction
+                                </p>
+                                <button class="btn-artifact" onclick="openArtifactModal('code-review')">
+                                    View Code Review
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Peer Feedback Section -->
+                        <div class="peer-feedback-section">
+                            <div class="feedback-header">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                                <h5>Peer Feedback & Actionable Suggestion</h5>
+                            </div>
+                            <div class="feedback-card">
+                                <p class="feedback-text">
+                                    "The prbem_utils library is well-designed and solves a real pain point. 
+                                    One suggestion: consider <strong>adding unit tests and continuous integration</strong> 
+                                    to ensure reliability as the library evolves and more team members contribute to it."
+                                </p>
+                                <div class="feedback-author">
+                                    <span>— Antoine Ferlin, ONERA</span>
+                                </div>
+                            </div>
+                            <div class="action-plan">
+                                <h6>Action Plan:</h6>
+                                <ul>
+                                    <li>✅ Implement pytest test suite covering main functions</li>
+                                    <li>✅ Set up GitHub Actions for automated testing</li>
+                                    <li>✅ Create test data fixtures for different file formats</li>
+                                    <li>✅ Add code coverage reporting (target: >80%)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Reflective Summary -->
+            <div class="growth-summary">
+                <div class="summary-card">
+                    <h3>Key Takeaways from My Learning Journey</h3>
+                    <div class="takeaways-grid">
+                        <div class="takeaway-item">
+                            <span class="takeaway-icon">💡</span>
+                            <h4>Continuous Learning is a Superpower</h4>
+                            <p>
+                                The ability to learn quickly and efficiently is more valuable than mastering 
+                                any single technology
+                            </p>
+                        </div>
+                        <div class="takeaway-item">
+                            <span class="takeaway-icon">🎯</span>
+                            <h4>Challenges Drive Growth</h4>
+                            <p>
+                                The most significant learning happens when facing complex problems outside 
+                                your comfort zone
+                            </p>
+                        </div>
+                        <div class="takeaway-item">
+                            <span class="takeaway-icon">🤝</span>
+                            <h4>Feedback Accelerates Improvement</h4>
+                            <p>
+                                Actively seeking and acting on peer feedback creates exponential growth 
+                                opportunities
+                            </p>
+                        </div>
+                        <div class="takeaway-item">
+                            <span class="takeaway-icon">📈</span>
+                            <h4>Document Your Journey</h4>
+                            <p>
+                                Reflecting on experiences and documenting learning solidifies knowledge 
+                                and tracks progress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Modal pour les Artifacts -->
+<div id="artifactModal" class="artifact-modal">
+    <div class="artifact-modal-overlay"></div>
+    <div class="artifact-modal-content">
+        <button class="artifact-modal-close" onclick="closeArtifactModal()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <div id="artifactModalBody"></div>
+    </div>
+</div>
+
+
+<!-- Modal pour les artifacts -->
+<div id="artifactModal" class="artifact-modal">
+    <div class="artifact-modal-overlay" onclick="closeArtifactModal()"></div>
+    <div class="artifact-modal-content">
+        <button class="artifact-modal-close" onclick="closeArtifactModal()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <div id="artifactModalBody"></div>
+    </div>
+</div>
+
+
+    <!-- Section Carriere -->
+    <section id="carriere" class="carriere-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Career</h2>
+                <div class="title-underline"></div>
+                <p class="section-subtitle">
+                    Find my resume and my elevator pitch
+                </p>
+            </div>
+
+            <!-- CV Downloads -->
+            <div class="cv-container">
+                <a href="images/cv_fr.pdf" download class="cv-card">
+                    <div class="cv-preview">
+                        <div class="cv-image">
+                            <img src="images/cv_fr.png" alt="French CV">
+                            <div class="cv-overlay">
+                                <div class="download-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="7 10 12 15 17 10"></polyline>
+                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                    </svg>
+                                </div>
+                                <span class="download-text">Download</span>
+                            </div>
+                        </div>
+                        <div class="cv-label">
+                            <span class="cv-flag">🇫🇷</span>
+                            <span class="cv-title">French CV</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="images/cv_en.pdf" download class="cv-card">
+                    <div class="cv-preview">
+                        <div class="cv-image">
+                            <img src="images/cv_en.png" alt="English CV">
+                            <div class="cv-overlay">
+                                <div class="download-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="7 10 12 15 17 10"></polyline>
+                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                    </svg>
+                                </div>
+                                <span class="download-text">Download</span>
+                            </div>
+                        </div>
+                        <div class="cv-label">
+                            <span class="cv-flag">🇬🇧</span>
+                            <span class="cv-title">English CV</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Elevator Pitch Video -->
+            <div class="elevator-pitch-section">
+                <h3 class="subsection-title">My Elevator Pitch</h3>
+                <div class="video-container">
+                    <video controls poster="chemin/vers/thumbnail.jpg">
+                        <source src="video/Timeline.mov" type="video/mp4">
+                        Your browser does not support video playback.
+                    </video>
+                </div>
+            </div>
+
+            <!-- Interviews Cards -->
+            <div class="interviews-section">
+                <h3 class="subsection-title">Professional Interviews</h3>
+                <div class="interviews-grid">
+
+                    <div class="interview-card"  onclick="openInterviewModal('Antoine-Ferlin')">
+                        <div class="interview-avatar">
+                            <img src="images/antoine.jpg" alt="Antoine Ferlin">
+                            <div class="avatar-ring"></div>
+                        </div>
+                        <div class="interview-content">
+                            <h4 class="interview-name">Antoine Ferlin</h4>
+                            <p class="interview-title">Research Database Engineer</p>
+                            <p class="interview-company">ONERA</p>
+                            <a class="interview-btn" href="https://www.idref.fr/174539584">
+                                Publications
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="interview-card"  onclick="openInterviewModal('Emerick-Laborde')">
+                        <div class="interview-avatar">
+                            <img src="images/emerick.jpg" alt="Emerick Laborde">
+                            <div class="avatar-ring"></div>
+                        </div>
+                        <div class="interview-content">
+                            <h4 class="interview-name">Emerick Laborde</h4>
+                            <p class="interview-title">PhD Student</p>
+                            <p class="interview-company">ONERA</p>
+                            <a class="interview-btn" href="https://www.linkedin.com/in/emerick-laborde/">
+                                Contact
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="interview-card"  onclick="openInterviewModal('Christophe-Narbonne')">
+                        <div class="interview-avatar">
+                            <img src="images/chricri.jpg" alt="Pierre Dubois">
+                            <div class="avatar-ring"></div>
+                        </div>
+                        <div class="interview-content">
+                            <h4 class="interview-name">Christophe Narbonne</h4>
+                            <p class="interview-title">Software Engineer</p>
+                            <p class="interview-company">Anikit</p>
+                            <a class="interview-btn" href="https://www.linkedin.com/in/christophe31/" >
+                                Contact
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal pour les interviews (optionnel) -->
+    <div id="interviewModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeInterviewModal()">&times;</span>
+            <div id="modalInterviewContent"></div>
+        </div>
+    </div>
+
+    <!-- Section Engagement -->
+    <section id="engagement" class="section engagement-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">CSR Engagement</h2>
+                <div class="title-underline"></div>
+                <p class="section-subtitle">
+                    Let's be responsible
+                </p>
+            </div>
+
+            <!-- Introduction Text -->
+            <div class="engagement-intro">
+                <div class="intro-content">
+                    <h3 class="intro-title">The Citizen Engineer</h3>
+                    <p class="intro-text">
+                        As engineers, our role is not limited to technical mastery.
+                        We have a responsibility to contribute positively to society and to use
+                        our skills to solve problems that go beyond the strictly professional sphere.
+                    </p>
+                    <p class="intro-text">
+                        Citizen engagement allows us to develop social awareness, understand current
+                        societal issues, and put our expertise at the service of causes we care about.
+                        It is also an opportunity to develop essential human skills: empathy, teamwork,
+                        communication, and leadership.
+                    </p>
+                    <div class="intro-highlight">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                        <span>Act locally, think globally</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Engagement Grid -->
+            <div class="engagements-grid">
+
+                <!-- Engagement 1 -->
+                <div class="engagement-card" onclick="openEngagementModal('reserviste')">
+                    <div class="card-header">
+                        <div class="card-icon sport"k>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                                <path d="M2 12h20"></path>
+                            </svg>
+                        </div>
+                        <span class="card-badge">Commitment</span>
+                    </div>
+                    <h3 class="card-title">Operational Reservist</h3>
+                    <p class="card-description">
+                        Operational reservist within the French Navy with the rank of Ensign (2nd class).
+                    </p>
+                    <div class="card-footer">
+                        <span class="card-date">2025 - Ongoing</span>
+                        <span class="card-cta">Learn more →</span>
+                    </div>
+                </div>
+
+                <!-- Engagement 2 -->
+                <div class="engagement-card" onclick="openEngagementModal('intervention')">
+                    <div class="card-header">
+                        <div class="card-icon environnement">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                <path d="M2 12h20"></path>
+                            </svg>
+                        </div>
+                        <span class="card-badge">Information</span>
+                    </div>
+                    <h3 class="card-title">High School Intervention</h3>
+                    <p class="card-description">
+                        Intervention in my former high school to talk about my academic and professional journey.
+                    </p>
+                    <div class="card-footer">
+                        <span class="card-date">2023 - 2024</span>
+                        <span class="card-cta">Learn more →</span>
+                    </div>
+                </div>
+
+                <!-- Engagement 3 -->
+                <div class="engagement-card" onclick="openEngagementModal('sensibilisation')">
+                    <div class="card-header">
+                        <div class="card-icon education">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                            </svg>
+                        </div>
+                        <span class="card-badge">Awareness</span>
+                    </div>
+                    <h3 class="card-title">KingKong Trial</h3>
+                    <p class="card-description">
+                        I raised awareness about SGBV (Sexual and Gender-Based Violence) by participating in this play.
+                    </p>
+                    <div class="card-footer">
+                        <span class="card-date">2025</span>
+                        <span class="card-cta">Learn more →</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inspirational Quote -->
+            <div class="engagement-quote">
+                <svg class="quote-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                </svg>
+                <blockquote>
+                    The true greatness of an engineer is measured not only by their technical achievements,
+                    but also by the positive impact they have on society.
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal pour les détails d'engagement -->
+    <div id="engagementModal" class="modal engagement-modal">
+        <div class="modal-content engagement-modal-content">
+            <span class="modal-close" onclick="closeEngagementModal()">&times;</span>
+            <div id="modalEngagementContent"></div>
+        </div>
+    </div>
+
+
+    <!-- Section International -->
+    <section id="inter" class="section inter-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">International</h2>
+                <p class="section-subtitle">
+                    My International Project
+                </p>
+            </div>
+
+            <!-- Introduction -->
+            <div class="inter-intro">
+                <p class="inter-intro-text">
+                    Opening to international experiences is essential in my engineering training.
+                    Exploring new cultures, discovering different technological approaches,
+                    and developing a global vision are an integral part of my professional project.
+                </p>
+            </div>
+
+            <!-- My Research Approach -->
+            <div class="research-approach">
+                <h3 class="approach-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    My Research Approach
+                </h3>
+                <div class="approach-steps" style="color: red;">
+                  <img src="images/preuve.png" alt="">
+                </div>
+            </div>
+
+            <!-- Destinations -->
+            <div class="destinations-container">
+
+                <!-- Destination 1 - Left Image Alignment -->
+                <div class="destination-card left-image">
+                    <div class="card-image-wrapper">
+                        <div class="card-image">
+                            <img src="images/allemagne.jpg" alt="Germany">
+                            <div class="image-overlay">
+                                <span class="country-flag"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content-wrapper">
+                        <div class="card-content">
+                            <div class="card-header-dest">
+                                <h3 class="destination-title">Germany</h3>
+                                <span class="destination-duration">Internship</span>
+                            </div>
+                            <div class="destination-tags">
+                                <!--<span class="tag"></span>--->
+                            </div>
+                            <p class="destination-motivation">
+                                <strong>Why Germany?</strong><br>
+                                In Germany, I would have the opportunity to work at ESA (European Space Agency).
+                                This possibility is offered to me by ONERA, which has many projects with ESA.
+
+                            </p>
+                            <div class="destination-objectives">
+                                <h4>My Objectives:</h4>
+                                <ul>
+                                    <li>Integrate a research laboratory</li>
+                                    <li>Develop a professional network in the research sector</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destination 2 - Right Image Alignment -->
+                <div class="destination-card right-image">
+                    <div class="card-content-wrapper">
+                        <div class="card-content">
+                            <div class="card-header-dest">
+                                <h3 class="destination-title">Brazil</h3>
+                                <span class="destination-duration">Internship or Training</span>
+                            </div>
+                            <div class="destination-tags">
+
+                            </div>
+                            <p class="destination-motivation">
+                                <strong>Why Brazil?</strong><br>
+                                I would like to do my international mobility in Brazil because, thanks to my company’s connections, I could have the opportunity to work in a company that does artificial intelligence
+                            </p>
+                            <div class="destination-objectives">
+                                <h4>My Objectives:</h4>
+                                <ul>
+                                    <li>Discover the culture</li>
+                                    <li>Improve my professional English</li>
+                                    <li>Improve my AI skills</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-image-wrapper">
+                        <div class="card-image">
+                            <img src="images/bresil.jpeg" alt="Brazil">
+                            <div class="image-overlay">
+                                <span class="country-flag"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destination 3 - Left Image Alignment -->
+                <div class="destination-card left-image">
+                    <div class="card-image-wrapper">
+                        <div class="card-image">
+                            <img src="images/colombie.jpeg" alt="Colombia">
+                            <div class="image-overlay">
+                                <span class="country-flag"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content-wrapper">
+                        <div class="card-content">
+                            <div class="card-header-dest">
+                                <h3 class="destination-title">Colombia</h3>
+                                <span class="destination-duration">Training</span>
+                            </div>
+                            <div class="destination-tags">
+                                <!--<span class="tag"></span>--->
+                            </div>
+                            <p class="destination-motivation">
+                                <strong>Why Colombia?</strong><br>
+                                I would like to go to Colombia to complete my third semester of studies abroad. As mentioned in my elevator pitch, I am aiming for the Escuela Colombiana de Julio Garavito.                            
+                            </p>
+                            <div class="destination-objectives">
+                                <h4>My Objectives:</h4>
+                                <ul>
+                                    <li>Improve my AI skills</li>
+                                    <li>Integrate a famous University</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contact Me</h2>
+                <div class="title-underline"></div>
+                <p class="section-subtitle">
+                    A question, a project? Don't hesitate to contact me!
+                </p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>Email</h3>
+                        <a href="mailto:votre.email@example.com">rayhan.benlhaj@etu.inp-n7.fr</a>
+                    </div>
+                    <div class="contact-item">
+                        <h3>LinkedIn</h3>
+                        <a href="https://www.linkedin.com/in/rayhan-benlhaj" target="_blank">www.linkedin.com/in/rayhan-benlhaj</a>
+                    </div>
+                    <div class="contact-item">
+                        <h3>GitHub</h3>
+                        <a href="https://github.com/ryry-oui" target="_blank">https://github.com/ryry-oui</a>
+                    </div>
+                </div>
+                <a href="mailto:rayhan.benlhaj@etu.inp-n7.fr" class="btn btn-primary oui">Send a message</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Rayhan BENLHAJ - ENSEEIHT / ONERA</p>
+        </div>
+    </footer>
+
+        <!-- Bouton Retour en haut -->
+        <button id="scrollToTop" class="scroll-to-top" aria-label="Retour en haut">
+            <svg class="rocket-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L12 22M12 2L6 8M12 2L18 8"/>
+            </svg>
+            <div class="scroll-progress-ring">
+                <svg class="progress-ring" width="60" height="60">
+                    <circle class="progress-ring-circle" stroke="currentColor" stroke-width="3" fill="transparent" r="27" cx="30" cy="30"/>
+                </svg>
+            </div>
+        </button>
+        
+    </body>
+    </html>
+    
+
+    <script src="script/script.js"></script>
 </body>
 </html>
