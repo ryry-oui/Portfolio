@@ -4724,8 +4724,8 @@ section.carriere-section::before {
 
 
 /* Écrans ≤ 15 pouces (environ 1366px de largeur) */
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 1500px) {
     .nav-container{
-        font-size: 20px;
+        font-size: 15px;
     }
 }
