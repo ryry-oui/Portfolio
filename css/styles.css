@@ -4721,3 +4721,11 @@ section.carriere-section::before {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+
+/* Écrans ≤ 15 pouces (environ 1366px de largeur) */
+@media screen and (max-width: 1366px) {
+    .nav-container{
+        font-size: 20px;
+    }
+}
